@@ -170,4 +170,26 @@ router.post('/commodityeditsave', (req, res) => {
 	})
 })
 
+//接收商品入库请求/repertoryadd
+router.post('/repertoryadd',(req,res)=>{
+
+
+ let{barcode,goodsinprice,stocknum}=req.body;
+
+ const sqlstr =  `insert into commodity(barcode,goodsinprice,stocknum) values('${barcode}','${goodsinprice}','${stocknum}')`;
+ console.log(sqlstr);
+ 
+ connection.query(sqlstr, (err, data) => {
+  if (err) throw err;
+  // 判断
+  if (data.affectedRows > 0) {
+    // 返回成功的提示信息
+    res.send({code: 0, reason: '入库商品成功'});
+  } else {
+    // 返回成功的提示信息
+    res.send({code: 1, reason: '入库商品失败'});
+  }
+})
+})
+
 module.exports = router;

@@ -20,7 +20,7 @@
           <el-col :span="6">
             <el-row>
               <el-col :span="2">
-                <div class="comword">--</div>
+                <div class="comword">----</div>
               </el-col>
               <el-col :span="20">
                 <el-date-picker v-model="value1" type="date" placeholder="选择日期"></el-date-picker>
@@ -41,7 +41,7 @@
                 </el-select>
               </el-col>
               <el-col :span="12">
-                <el-button type="success">提交</el-button>
+                <el-button type="success">查询</el-button>
               </el-col>
             </el-row>
           </el-col>
@@ -59,20 +59,7 @@ import moment from "moment";
 export default {
   data() {
     return {
-      options: [
-        {
-          value: "选项1",
-          label: "食品"
-        },
-        {
-          value: "选项2",
-          label: "服装"
-        },
-        {
-          value: "选项3",
-          label: "生活用品"
-        }
-      ],
+     
       value8: "",
       value1: ""
     };

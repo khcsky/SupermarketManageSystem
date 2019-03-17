@@ -236,7 +236,7 @@ router.get('/accountisname', (req, res) => {
         } else {
             res.send({
                 code: 1,
-                reason: "账号以存在,请从新输入"
+                reason: "账号已存在,请从新输入"
             })
         }
 
